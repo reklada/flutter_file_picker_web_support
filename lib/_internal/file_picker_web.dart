@@ -13,6 +13,10 @@ class FilePickerWeb extends FilePicker {
 
   static final FilePickerWeb platform = FilePickerWeb._();
 
+  FilePickerWeb() {
+    _target = _ensureInitialized(_kFilePickerInputsDomId);
+  }
+
   FilePickerWeb._() {
     _target = _ensureInitialized(_kFilePickerInputsDomId);
   }
