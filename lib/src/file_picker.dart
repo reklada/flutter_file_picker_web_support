@@ -9,6 +9,7 @@ import 'package:file_picker/src/linux/file_picker_linux.dart';
 import 'package:file_picker/src/windows/stub.dart'
     if (dart.library.io) 'package:file_picker/src/windows/file_picker_windows.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 const String defaultDialogTitle = '';
 
@@ -56,7 +57,7 @@ abstract class FilePicker extends PlatformInterface {
       return filePickerWithFFI();
     } else if (Platform.isMacOS) {
       return FilePickerMacOS();
-    } else if {
+    } else if (kIsWeb) {
       return FilePickerWeb();
     } else {
       throw UnimplementedError(
